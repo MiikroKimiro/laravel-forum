@@ -23,7 +23,7 @@ class Thread extends BaseModel
      */
     protected $fillable = ['category_id', 'author_id', 'title', 'locked', 'pinned', 'reply_count'];
 
-    protected $appends = ['posts_paginated', 'last_page', 'first_post', 'last_post', 'last_post_time', 'old', 'reader'];
+    protected $appends = ['posts_paginated', 'last_page', 'first_post', 'last_post', 'last_post_time', 'reader'];
 
     /**
      * @var string
