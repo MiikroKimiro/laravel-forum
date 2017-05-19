@@ -22,7 +22,7 @@ class Post extends BaseModel
 	 */
     protected $fillable = ['thread_id', 'author_id', 'post_id', 'content'];
 
-    protected $appends = ['is_first'];
+//    protected $appends = ['is_first'];
 
     /**
      * Create a new post model instance.
