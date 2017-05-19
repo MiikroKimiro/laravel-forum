@@ -28,7 +28,7 @@ class Category extends BaseModel
 	 */
     protected $fillable = ['category_id', 'title', 'description', 'weight', 'enable_threads', 'private', 'thread_count', 'post_count'];
 
-    protected $appends = ['children', 'threads_paginated', 'newest_thread', 'latest_active_thread', 'threads_enabled'];
+    protected $appends = ['slug', 'children', 'threads_paginated', 'newest_thread', 'latest_active_thread', 'threads_enabled'];
 
     /**
      * Create a new category model instance.
