@@ -28,7 +28,7 @@ class Category extends BaseModel
 	 */
     protected $fillable = ['category_id', 'title', 'description', 'weight', 'enable_threads', 'private', 'thread_count', 'post_count'];
 
-    protected $appends = ['children', 'threads_paginated', 'newest_thread', 'latest_active_thread', 'threads_enabled', 'deepest_child', 'depth'];
+    protected $appends = ['children', 'threads_paginated', 'newest_thread', 'latest_active_thread', 'threads_enabled'];
 
     /**
      * Create a new category model instance.
@@ -71,6 +71,12 @@ class Category extends BaseModel
         $withTrashed = Gate::allows('viewTrashedThreads');
         $query = $this->hasMany(Thread::class);
         return $withTrashed ? $query->withTrashed() : $query;
+    }
+
+
+    public function getSlugAttribute()
+    {
+        return str_slug($this->attributes['title']);
     }
 
     /**
